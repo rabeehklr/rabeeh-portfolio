@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-6 md:mb-0">
-            <a href="#home" className="text-xl font-bold text-gradient">CloudEngineer</a>
+            <a href="#home" className="text-xl font-bold text-gradient">Mohammed Rabeeh</a>
             <p className="mt-2 text-foreground/60 text-sm">
               Building robust cloud infrastructure for the future.
             </p>
@@ -39,12 +39,6 @@ const Footer = () => {
               <ArrowUp className="h-5 w-5 text-primary" />
             </button>
           </div>
-        </div>
-        
-        <div className="border-t border-border/50 mt-8 pt-8 text-center">
-          <p className="text-sm text-foreground/60">
-            &copy; {new Date().getFullYear()} Cloud Engineer Portfolio. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>
