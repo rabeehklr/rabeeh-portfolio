@@ -64,20 +64,20 @@ const ExperienceSection = () => {
                 
                 <div className={`pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'} w-full md:w-1/2`}>
                   <div className="bg-card p-6 rounded-lg glassmorphism">
-                    <h3 className="text-xl font-bold">{exp.role}</h3>
-                    <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 mt-1 mb-3 text-primary">
+                    <h3 className="text-xl font-bold text-left">{exp.role}</h3>
+                    <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 mt-1 mb-3 text-primary text-left">
                       <span>{exp.company}</span>
                       <span className="hidden md:block">•</span>
                       <span className="text-foreground/60">{exp.period}</span>
                     </div>
                     
-                    <p className="text-foreground/80 mb-4">{exp.description}</p>
+                    <p className="text-foreground/80 mb-4 text-left">{exp.description}</p>
                     
                     <Separator className="my-4" />
                     
                     <div>
-                      <h4 className="text-sm font-semibold mb-2">Key Learnings:</h4>
-                      <ul className="list-disc list-inside text-foreground/70 space-y-1 text-left">
+                      <h4 className="text-sm font-semibold mb-2 text-left">Key Learnings:</h4>
+                      <ul className="list-disc list-inside text-foreground/70 space-y-1 text-left pl-0">
                         {exp.achievements.map((achievement, i) => (
                           <li key={i} className="text-sm">{achievement}</li>
                         ))}
@@ -97,3 +97,4 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
+
