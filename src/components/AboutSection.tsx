@@ -6,23 +6,23 @@ const AboutSection = () => {
   const skills = [
     {
       icon: <Cloud className="h-8 w-8 text-primary" />,
-      title: 'Cloud Platforms',
-      description: 'Expert in AWS, Azure, and GCP with hands-on experience designing and implementing cloud solutions.',
+      title: 'Cloud Foundations',
+      description: 'Actively learning cloud platforms with a focus on AWS, Azure, and GCP fundamentals.',
     },
     {
       icon: <Server className="h-8 w-8 text-primary" />,
-      title: 'Infrastructure as Code',
-      description: 'Proficient with Terraform, CloudFormation, and Pulumi for automated, version-controlled infrastructure.',
+      title: 'Infrastructure Learning',
+      description: 'Studying Infrastructure as Code principles and exploring Terraform, CloudFormation basics.',
     },
     {
       icon: <Shield className="h-8 w-8 text-primary" />,
-      title: 'Security & Compliance',
-      description: 'Implementing secure cloud architectures following well-architected frameworks and compliance standards.',
+      title: 'Security Awareness',
+      description: 'Building foundational knowledge in cloud security best practices and compliance standards.',
     },
     {
       icon: <Database className="h-8 w-8 text-primary" />,
-      title: 'DevOps & CI/CD',
-      description: 'Creating seamless pipeline automation with GitHub Actions, Jenkins, and cloud-native CI/CD tools.',
+      title: 'DevOps Exploration',
+      description: 'Learning CI/CD principles, containerization, and exploring automation tools.',
     },
   ];
 
@@ -34,20 +34,20 @@ const AboutSection = () => {
             <h2 className="text-3xl font-bold mb-6">About Me</h2>
             <div className="text-foreground/80 space-y-4">
               <p>
-                I'm a passionate Cloud Engineer with extensive experience in designing, implementing, and managing cloud infrastructure for enterprise applications. My expertise spans across multi-cloud environments, with a focus on building scalable, reliable, and secure solutions.
+                I'm an aspiring Cloud Engineer passionate about transforming my technical knowledge into innovative cloud solutions. Currently, I'm focusing on building a strong foundation in cloud technologies and DevOps practices.
               </p>
               <p>
-                With a background in DevOps practices and infrastructure automation, I bridge the gap between development and operations, enabling teams to deliver faster and more reliably through CI/CD pipelines and Infrastructure as Code.
+                My journey involves continuous learning, hands-on projects, and a commitment to understanding the intricate world of cloud infrastructure. I'm actively acquiring skills through online courses, certifications, and personal projects.
               </p>
               <p>
-                I'm constantly learning and exploring new technologies, with a particular interest in serverless architectures, containerization, and cloud-native development practices.
+                My goal is to contribute to cutting-edge cloud architectures that drive efficiency, scalability, and innovation in modern technological ecosystems.
               </p>
             </div>
             
             <div className="mt-8">
-              <h3 className="text-xl font-bold mb-4">Core Technologies</h3>
+              <h3 className="text-xl font-bold mb-4">Learning Path</h3>
               <div className="flex flex-wrap gap-3">
-                {["AWS", "Azure", "GCP", "Terraform", "Kubernetes", "Docker", "CI/CD", "Python", "Go", "Linux", "Monitoring"].map((tech) => (
+                {["AWS Fundamentals", "Azure Basics", "Terraform", "Docker", "Kubernetes", "CI/CD", "Python", "Cloud Security"].map((tech) => (
                   <span key={tech} className="px-3 py-1 bg-background rounded-full text-sm">
                     {tech}
                   </span>

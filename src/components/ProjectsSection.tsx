@@ -6,24 +6,24 @@ import { Button } from '@/components/ui/button';
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'Enterprise Cloud Migration',
-      description: 'Led the migration of a critical financial application from on-premises to AWS, resulting in 40% cost reduction and improved scalability.',
-      tags: ['AWS', 'Terraform', 'CI/CD', 'Microservices'],
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80',
+      title: 'Personal Cloud Lab',
+      description: 'Developed a home lab environment using Terraform to simulate cloud infrastructure, practicing IaC principles and AWS resource management.',
+      tags: ['Terraform', 'AWS', 'IaC', 'Cloud Simulation'],
+      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80',
       link: '#',
     },
     {
-      title: 'Multi-Cloud Kubernetes Platform',
-      description: 'Designed and implemented a Kubernetes platform spanning across AWS and Azure, enabling seamless application deployment and disaster recovery.',
-      tags: ['Kubernetes', 'Helm', 'Docker', 'Multi-Cloud'],
+      title: 'Containerized Web Application',
+      description: 'Created a Docker-based web application demonstrating containerization, GitHub Actions for CI/CD, and basic microservices architecture.',
+      tags: ['Docker', 'GitHub Actions', 'Microservices', 'CI/CD'],
       image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80',
       link: '#',
     },
     {
-      title: 'Serverless Data Processing Pipeline',
-      description: 'Built a serverless solution for processing large volumes of IoT data using event-driven architecture and automated scaling.',
-      tags: ['Lambda', 'Event-driven', 'DynamoDB', 'S3'],
-      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80',
+      title: 'Cloud Security Analysis',
+      description: 'Implemented a small-scale project analyzing cloud security best practices, including basic network security configurations and access management.',
+      tags: ['Cloud Security', 'IAM', 'Network Configuration', 'Best Practices'],
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80',
       link: '#',
     },
   ];
@@ -32,9 +32,9 @@ const ProjectsSection = () => {
     <section id="projects" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold">Featured Projects</h2>
+          <h2 className="text-3xl font-bold">Learning Projects</h2>
           <p className="mt-4 text-foreground/70 max-w-2xl mx-auto">
-            A selection of cloud infrastructure and architecture projects that showcase my expertise and problem-solving approach.
+            Hands-on projects demonstrating my growing skills in cloud technologies and DevOps practices.
           </p>
         </div>
         
@@ -69,7 +69,7 @@ const ProjectsSection = () => {
               <CardFooter>
                 <Button variant="ghost" className="w-full justify-between group" asChild>
                   <a href={project.link}>
-                    <span>View Case Study</span> 
+                    <span>View Project</span> 
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
@@ -81,7 +81,7 @@ const ProjectsSection = () => {
         <div className="mt-12 text-center">
           <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
             <Link className="mr-2 h-4 w-4" />
-            View All Projects
+            Explore More Projects
           </Button>
         </div>
       </div>
