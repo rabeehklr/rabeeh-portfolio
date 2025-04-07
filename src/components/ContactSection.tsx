@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -100,7 +99,7 @@ const ContactSection = () => {
             <div className="glassmorphism rounded-lg p-6">
               <h3 className="text-xl font-bold mb-4">Connect With Me</h3>
               <div className="flex space-x-4">
-                {['GitHub', 'LinkedIn', 'Twitter', 'Medium'].map((platform) => (
+                {['GitHub', 'LinkedIn', 'Twitter'].map((platform) => (
                   <a
                     key={platform}
                     href="#"

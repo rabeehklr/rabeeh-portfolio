@@ -77,7 +77,7 @@ const ExperienceSection = () => {
                     
                     <div>
                       <h4 className="text-sm font-semibold mb-2">Key Learnings:</h4>
-                      <ul className="list-disc list-inside text-foreground/70 space-y-1">
+                      <ul className="list-disc list-inside text-foreground/70 space-y-1 text-left">
                         {exp.achievements.map((achievement, i) => (
                           <li key={i} className="text-sm">{achievement}</li>
                         ))}

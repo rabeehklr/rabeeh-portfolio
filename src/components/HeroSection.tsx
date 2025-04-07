@@ -1,4 +1,3 @@
-
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -9,7 +8,7 @@ const HeroSection = () => {
         <div className="text-center md:text-left animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             <span className="block">Hi, I'm</span>
-            <span className="text-gradient text-5xl md:text-7xl mt-2">Cloud Engineer</span>
+            <span className="text-gradient text-5xl md:text-7xl mt-2">Mohammed Rabeeh</span>
           </h1>
           
           <p className="mt-6 text-xl md:text-2xl text-foreground/80 max-w-2xl mx-auto md:mx-0">
@@ -34,7 +33,6 @@ const HeroSection = () => {
         </a>
       </div>
       
-      {/* Decorative elements */}
       <div className="absolute top-1/4 right-20 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-40 h-40 rounded-full bg-accent/5 blur-3xl"></div>
     </section>
