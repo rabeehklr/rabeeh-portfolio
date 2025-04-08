@@ -101,7 +101,7 @@ const ContactSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Contact Info */}
-          <div className="lg:col-span-3 space-y-8">
+          <div className="lg:col-span-2 space-y-8">
             <div className="glassmorphism rounded-lg p-6 space-y-6">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start">
@@ -147,7 +147,7 @@ const ContactSection = () => {
           </div>
           
           {/* Contact Form */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="glassmorphism rounded-lg p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
