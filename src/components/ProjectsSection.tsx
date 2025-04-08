@@ -1,5 +1,5 @@
 
-import { ArrowRight, Link, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -86,7 +86,7 @@ const ProjectsSection = () => {
         <div className="mt-12 text-center">
           <Button 
             variant="outline" 
-            className="border-primary text-primary hover:bg-primary/10 px-8 py-6 group animate-pulse-glow"
+            className="border-primary text-primary hover:bg-primary/10 px-8 py-6 group"
             onClick={() => navigate('/projects')}
           >
             <ExternalLink className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" />

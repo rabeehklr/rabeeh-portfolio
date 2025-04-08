@@ -1,4 +1,5 @@
-import { Cloud, Server, Shield, Database, Star, Clock } from 'lucide-react';
+
+import { Cloud, Server, Shield, Database, Star, Network, Code } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 
@@ -24,19 +25,29 @@ const AboutSection = () => {
       title: 'DevOps Exploration',
       description: 'Learning CI/CD principles, containerization, and exploring automation tools.',
     },
+    {
+      icon: <Network className="h-8 w-8 text-primary" />,
+      title: 'Networking Expertise',
+      description: 'Understanding cloud networking concepts, VPCs, subnets, and implementing secure network architectures.',
+    },
+    {
+      icon: <Code className="h-8 w-8 text-primary" />,
+      title: 'Python Proficiency',
+      description: 'Developing automation scripts and cloud management tools using Python to enhance infrastructure workflows.',
+    },
   ];
 
   const techSkills = [
-    { name: 'AWS', logo: 'https://placehold.co/50x50/FF9900/white?text=AWS', level: 3 },
-    { name: 'Azure', logo: 'https://placehold.co/50x50/0078D4/white?text=Azure', level: 3 },
-    { name: 'Terraform', logo: 'https://placehold.co/50x50/5C4EE5/white?text=TF', level: 2 },
-    { name: 'Docker', logo: 'https://placehold.co/50x50/2496ED/white?text=Docker', level: 3 },
-    { name: 'Kubernetes', logo: 'https://placehold.co/50x50/326CE5/white?text=K8s', level: 2 },
-    { name: 'Python', logo: 'https://placehold.co/50x50/3776AB/white?text=Py', level: 4 },
-    { name: 'Linux', logo: 'https://placehold.co/50x50/FCC624/black?text=Linux', level: 3 },
-    { name: 'Git', logo: 'https://placehold.co/50x50/F05032/white?text=Git', level: 4 },
-    { name: 'CI/CD', logo: 'https://placehold.co/50x50/4A154B/white?text=CI/CD', level: 2 },
-    { name: 'Networking', logo: 'https://placehold.co/50x50/1A73E8/white?text=Net', level: 3 },
+    { name: 'AWS', logo: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg', level: 3 },
+    { name: 'Azure', logo: 'https://cdn.worldvectorlogo.com/logos/azure-1.svg', level: 3 },
+    { name: 'Terraform', logo: 'https://cdn.worldvectorlogo.com/logos/terraform-enterprise.svg', level: 2 },
+    { name: 'Docker', logo: 'https://cdn.worldvectorlogo.com/logos/docker.svg', level: 3 },
+    { name: 'Kubernetes', logo: 'https://cdn.worldvectorlogo.com/logos/kubernets.svg', level: 2 },
+    { name: 'Python', logo: 'https://cdn.worldvectorlogo.com/logos/python-5.svg', level: 4 },
+    { name: 'Linux', logo: 'https://cdn.worldvectorlogo.com/logos/linux-tux.svg', level: 3 },
+    { name: 'Git', logo: 'https://cdn.worldvectorlogo.com/logos/git-icon.svg', level: 4 },
+    { name: 'CI/CD', logo: 'https://cdn.worldvectorlogo.com/logos/jenkins-1.svg', level: 2 },
+    { name: 'Networking', logo: 'https://cdn.worldvectorlogo.com/logos/cisco-2.svg', level: 3 },
   ];
 
   const renderStars = (level) => {
@@ -80,21 +91,6 @@ const AboutSection = () => {
                 ))}
               </div>
             </div>
-          </div>
-          
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold mb-4">Core Competencies</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {skills.map((skill, index) => (
-                <Card key={index} className="glassmorphism overflow-hidden animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
-                  <CardContent className="p-6">
-                    <div className="mb-4">{skill.icon}</div>
-                    <h3 className="text-lg font-bold mb-2">{skill.title}</h3>
-                    <p className="text-sm text-foreground/70">{skill.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
 
             <div className="mt-10">
               <h3 className="text-xl font-bold mb-6">Technology Skills</h3>
@@ -121,6 +117,21 @@ const AboutSection = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+          
+          <div className="space-y-6">
+            <h3 className="text-xl font-bold mb-4">Core Competencies</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {skills.map((skill, index) => (
+                <Card key={index} className="glassmorphism overflow-hidden animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
+                  <CardContent className="p-6">
+                    <div className="mb-4">{skill.icon}</div>
+                    <h3 className="text-lg font-bold mb-2">{skill.title}</h3>
+                    <p className="text-sm text-foreground/70">{skill.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
