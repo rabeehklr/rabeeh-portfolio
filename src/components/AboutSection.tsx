@@ -1,4 +1,3 @@
-
 import { Cloud, Server, Shield, Database, Star, Clock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
@@ -28,19 +27,18 @@ const AboutSection = () => {
   ];
 
   const techSkills = [
-    { name: 'AWS', logo: 'https://placehold.co/50x50/orange/white?text=AWS', level: 3 },
+    { name: 'AWS', logo: 'https://placehold.co/50x50/FF9900/white?text=AWS', level: 3 },
     { name: 'Azure', logo: 'https://placehold.co/50x50/0078D4/white?text=Azure', level: 3 },
-    { name: 'Terraform', logo: 'https://placehold.co/50x50/7B42BC/white?text=TF', level: 2 },
+    { name: 'Terraform', logo: 'https://placehold.co/50x50/5C4EE5/white?text=TF', level: 2 },
     { name: 'Docker', logo: 'https://placehold.co/50x50/2496ED/white?text=Docker', level: 3 },
     { name: 'Kubernetes', logo: 'https://placehold.co/50x50/326CE5/white?text=K8s', level: 2 },
     { name: 'Python', logo: 'https://placehold.co/50x50/3776AB/white?text=Py', level: 4 },
     { name: 'Linux', logo: 'https://placehold.co/50x50/FCC624/black?text=Linux', level: 3 },
     { name: 'Git', logo: 'https://placehold.co/50x50/F05032/white?text=Git', level: 4 },
     { name: 'CI/CD', logo: 'https://placehold.co/50x50/4A154B/white?text=CI/CD', level: 2 },
-    { name: 'Networking', logo: 'https://placehold.co/50x50/0078D7/white?text=Net', level: 3 },
+    { name: 'Networking', logo: 'https://placehold.co/50x50/1A73E8/white?text=Net', level: 3 },
   ];
 
-  // Function to render star rating
   const renderStars = (level) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
