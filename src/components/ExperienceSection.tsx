@@ -1,5 +1,5 @@
 
-import { Briefcase } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 const ExperienceSection = () => {
@@ -59,7 +59,7 @@ const ExperienceSection = () => {
             <div key={index} className="mb-12 relative">
               <div className={`flex flex-col md:flex-row items-start ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background border-2 border-primary flex items-center justify-center z-10">
-                  <Briefcase className="h-4 w-4 text-primary" />
+                  <GraduationCap className="h-4 w-4 text-primary" />
                 </div>
                 
                 <div className={`pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'} w-full md:w-1/2`}>
@@ -97,4 +97,3 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
-

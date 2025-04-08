@@ -28,16 +28,16 @@ const AboutSection = () => {
   ];
 
   const techSkills = [
-    { name: 'AWS', logo: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=50&h=50&fit=crop&auto=format', level: 3 },
-    { name: 'Azure', logo: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=50&h=50&fit=crop&auto=format', level: 3 },
-    { name: 'Terraform', logo: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=50&h=50&fit=crop&auto=format', level: 2 },
-    { name: 'Docker', logo: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=50&h=50&fit=crop&auto=format', level: 3 },
-    { name: 'Kubernetes', logo: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=50&h=50&fit=crop&auto=format', level: 2 },
-    { name: 'Python', logo: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=50&h=50&fit=crop&auto=format', level: 4 },
-    { name: 'Linux', logo: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=50&h=50&fit=crop&auto=format', level: 3 },
-    { name: 'Git', logo: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=50&h=50&fit=crop&auto=format', level: 4 },
-    { name: 'CI/CD', logo: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=50&h=50&fit=crop&auto=format', level: 2 },
-    { name: 'Networking', logo: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=50&h=50&fit=crop&auto=format', level: 3 },
+    { name: 'AWS', logo: 'https://placehold.co/50x50/orange/white?text=AWS', level: 3 },
+    { name: 'Azure', logo: 'https://placehold.co/50x50/0078D4/white?text=Azure', level: 3 },
+    { name: 'Terraform', logo: 'https://placehold.co/50x50/7B42BC/white?text=TF', level: 2 },
+    { name: 'Docker', logo: 'https://placehold.co/50x50/2496ED/white?text=Docker', level: 3 },
+    { name: 'Kubernetes', logo: 'https://placehold.co/50x50/326CE5/white?text=K8s', level: 2 },
+    { name: 'Python', logo: 'https://placehold.co/50x50/3776AB/white?text=Py', level: 4 },
+    { name: 'Linux', logo: 'https://placehold.co/50x50/FCC624/black?text=Linux', level: 3 },
+    { name: 'Git', logo: 'https://placehold.co/50x50/F05032/white?text=Git', level: 4 },
+    { name: 'CI/CD', logo: 'https://placehold.co/50x50/4A154B/white?text=CI/CD', level: 2 },
+    { name: 'Networking', logo: 'https://placehold.co/50x50/0078D7/white?text=Net', level: 3 },
   ];
 
   // Function to render star rating
