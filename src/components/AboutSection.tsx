@@ -38,16 +38,16 @@ const AboutSection = () => {
   ];
 
   const techSkills = [
-    { name: 'AWS', logo: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg', level: 3 },
-    { name: 'Azure', logo: 'https://cdn.worldvectorlogo.com/logos/azure-1.svg', level: 3 },
-    { name: 'Terraform', logo: 'https://cdn.worldvectorlogo.com/logos/terraform-enterprise.svg', level: 2 },
-    { name: 'Docker', logo: 'https://cdn.worldvectorlogo.com/logos/docker.svg', level: 3 },
-    { name: 'Kubernetes', logo: 'https://cdn.worldvectorlogo.com/logos/kubernets.svg', level: 2 },
-    { name: 'Python', logo: 'https://cdn.worldvectorlogo.com/logos/python-5.svg', level: 4 },
-    { name: 'Linux', logo: 'https://cdn.worldvectorlogo.com/logos/linux-tux.svg', level: 3 },
-    { name: 'Git', logo: 'https://cdn.worldvectorlogo.com/logos/git-icon.svg', level: 4 },
-    { name: 'CI/CD', logo: 'https://cdn.worldvectorlogo.com/logos/jenkins-1.svg', level: 2 },
-    { name: 'Networking', logo: 'https://cdn.worldvectorlogo.com/logos/cisco-2.svg', level: 3 },
+    { name: 'AWS', logo: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/amazonaws.svg', level: 3 },
+    { name: 'Azure', logo: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/microsoftazure.svg', level: 3 },
+    { name: 'Terraform', logo: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/terraform.svg', level: 2 },
+    { name: 'Docker', logo: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/docker.svg', level: 3 },
+    { name: 'Kubernetes', logo: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kubernetes.svg', level: 2 },
+    { name: 'Python', logo: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/python.svg', level: 4 },
+    { name: 'Linux', logo: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/linux.svg', level: 3 },
+    { name: 'Git', logo: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/git.svg', level: 4 },
+    { name: 'CI/CD', logo: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/jenkins.svg', level: 2 },
+    { name: 'Networking', logo: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/cisco.svg', level: 3 },
   ];
 
   const renderStars = (level) => {
@@ -98,7 +98,7 @@ const AboutSection = () => {
                 {techSkills.map((tech, index) => (
                   <div key={index} className="flex flex-col gap-2">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 flex items-center justify-center bg-background rounded-md overflow-hidden">
+                      <div className="w-8 h-8 flex items-center justify-center bg-background rounded-md overflow-hidden p-1">
                         <img
                           src={tech.logo}
                           alt={`${tech.name} logo`}

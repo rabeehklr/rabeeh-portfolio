@@ -1,5 +1,6 @@
+
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -21,46 +22,70 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    // Use EmailJS to send the email
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'service_5bfcikw',
+          template_id: 'template_n8zf65m',
+          user_id: 'y7oXXtmyERXZdBaL4', 
+          template_params: {
+            from_name: formData.name,
+            from_email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+            to_email: 'mohammedrabeehpt@gmail.com',
+          }
+        }),
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
       toast({
-        title: "Message sent successfully!",
-        description: "Thank you for your message. I'll get back to you soon.",
+        title: "Error sending message",
+        description: "There was a problem sending your message. Please try again later.",
+        variant: "destructive",
       });
-      
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-      
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
   
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5 text-primary" />,
       title: 'Email',
-      detail: 'contact@cloudeng.example',
-      link: 'mailto:contact@cloudeng.example',
-    },
-    {
-      icon: <Phone className="h-5 w-5 text-primary" />,
-      title: 'Phone',
-      detail: '+1 (123) 456-7890',
-      link: 'tel:+11234567890',
+      detail: 'mohammedrabeehpt@gmail.com',
+      link: 'mailto:mohammedrabeehpt@gmail.com',
     },
     {
       icon: <MapPin className="h-5 w-5 text-primary" />,
       title: 'Location',
-      detail: 'San Francisco, CA',
-      link: '#',
+      detail: 'Malappuram, Kerala, India',
+      link: 'https://maps.google.com/?q=Malappuram,Kerala,India',
     },
   ];
 
@@ -99,15 +124,24 @@ const ContactSection = () => {
             <div className="glassmorphism rounded-lg p-6">
               <h3 className="text-xl font-bold mb-4">Connect With Me</h3>
               <div className="flex space-x-4">
-                {['GitHub', 'LinkedIn', 'Twitter'].map((platform) => (
-                  <a
-                    key={platform}
-                    href="#"
-                    className="px-4 py-2 bg-secondary/50 rounded-md hover:bg-primary/20 transition-colors text-sm text-foreground/70 hover:text-primary"
-                  >
-                    {platform}
-                  </a>
-                ))}
+                <a
+                  href="https://github.com/rabeehklr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-secondary/50 rounded-md hover:bg-primary/20 transition-colors text-sm text-foreground/70 hover:text-primary flex items-center gap-2"
+                >
+                  <Github size={16} />
+                  GitHub
+                </a>
+                <a
+                  href="https://linkedin.com/in/mohammedrabeeh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-secondary/50 rounded-md hover:bg-primary/20 transition-colors text-sm text-foreground/70 hover:text-primary flex items-center gap-2"
+                >
+                  <Linkedin size={16} />
+                  LinkedIn
+                </a>
               </div>
             </div>
           </div>

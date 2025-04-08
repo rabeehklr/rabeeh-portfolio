@@ -48,9 +48,6 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button className="ml-4 bg-primary hover:bg-primary/80 text-primary-foreground">
-                Resume
-              </Button>
             </div>
           </div>
           
@@ -80,9 +77,6 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button className="w-full mt-4 bg-primary hover:bg-primary/80 text-primary-foreground">
-              Resume
-            </Button>
           </div>
         </div>
       )}

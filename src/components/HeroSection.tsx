@@ -3,7 +3,7 @@ import { ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-0 z-10">
         <div className="text-center md:text-left animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
