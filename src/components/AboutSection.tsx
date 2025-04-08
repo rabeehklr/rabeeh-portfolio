@@ -28,16 +28,16 @@ const AboutSection = () => {
   ];
 
   const techSkills = [
-    { name: 'AWS', logo: '/aws.png', level: 3 },
-    { name: 'Azure', logo: '/azure.png', level: 3 },
-    { name: 'Terraform', logo: '/terraform.png', level: 2 },
-    { name: 'Docker', logo: '/docker.png', level: 3 },
-    { name: 'Kubernetes', logo: '/kubernetes.png', level: 2 },
-    { name: 'Python', logo: '/python.png', level: 4 },
-    { name: 'Linux', logo: '/linux.png', level: 3 },
-    { name: 'Git', logo: '/git.png', level: 4 },
-    { name: 'CI/CD', logo: '/cicd.png', level: 2 },
-    { name: 'Networking', logo: '/networking.png', level: 3 },
+    { name: 'AWS', logo: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=50&h=50&fit=crop&auto=format', level: 3 },
+    { name: 'Azure', logo: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=50&h=50&fit=crop&auto=format', level: 3 },
+    { name: 'Terraform', logo: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=50&h=50&fit=crop&auto=format', level: 2 },
+    { name: 'Docker', logo: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=50&h=50&fit=crop&auto=format', level: 3 },
+    { name: 'Kubernetes', logo: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=50&h=50&fit=crop&auto=format', level: 2 },
+    { name: 'Python', logo: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=50&h=50&fit=crop&auto=format', level: 4 },
+    { name: 'Linux', logo: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=50&h=50&fit=crop&auto=format', level: 3 },
+    { name: 'Git', logo: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=50&h=50&fit=crop&auto=format', level: 4 },
+    { name: 'CI/CD', logo: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=50&h=50&fit=crop&auto=format', level: 2 },
+    { name: 'Networking', logo: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=50&h=50&fit=crop&auto=format', level: 3 },
   ];
 
   // Function to render star rating
