@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -28,6 +27,11 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
+// EmailJS credentials
+const EMAILJS_SERVICE_ID = "service_tvoyjbs";
+const EMAILJS_TEMPLATE_ID = "template_b20ifsq";
+const EMAILJS_PUBLIC_KEY = "EsHnio-V9r9PwdqMc";
+
 const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,20 +51,30 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Initialize EmailJS with your public key (before sending)
-      emailjs.init("y7oXXtmyERXZdBaL4");
+      // Initialize EmailJS with your public key
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+      
+      // Get current time for the template
+      const currentTime = new Date().toLocaleString();
+      
+      // Prepare template parameters to match your email template variables
+      const templateParams = {
+        name: values.name,
+        email: values.email,
+        time: currentTime,
+        subject: values.subject,
+        message: values.message
+      };
       
       // Send the email using EmailJS
-      await emailjs.send(
-        "service_5bfcikw",  // Service ID
-        "template_n8zf65m",  // Template ID
-        {
-          from_name: values.name,
-          from_email: values.email,
-          subject: values.subject,
-          message: values.message,
-        }
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
       );
+      
+      console.log('Email sent successfully:', response);
       
       toast({
         title: "Message sent successfully!",
