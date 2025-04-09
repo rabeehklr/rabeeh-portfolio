@@ -351,7 +351,7 @@ const ProjectDetail = () => {
   
   useEffect(() => {
     // Set page title
-    document.title = project ? `${project.title} | Cloud Engineer Portfolio` : "Project Not Found";
+    document.title = project ? `${project.title} | Rabeeh Portfolio` : "Project Not Found";
     
     // Animation effect
     const observer = new IntersectionObserver(

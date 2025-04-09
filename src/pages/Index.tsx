@@ -12,7 +12,7 @@ import ParticleBackground from '@/components/ParticleBackground';
 const Index = () => {
   // Set page title
   useEffect(() => {
-    document.title = "Cloud Engineer Portfolio";
+    document.title = "Rabeeh Portfolio";
   }, []);
 
   return (

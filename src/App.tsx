@@ -14,6 +14,7 @@ const queryClient = new QueryClient();
 const App = () => {
   useEffect(() => {
     // Load EmailJS script
+    
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
     script.async = true;

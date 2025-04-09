@@ -13,7 +13,7 @@ const Projects = () => {
   
   // Set page title
   useEffect(() => {
-    document.title = "Projects | Cloud Engineer Portfolio";
+    document.title = "Projects | Rabeeh Portfolio";
   }, []);
 
   const additionalProjects = [
