@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -26,42 +27,34 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Use EmailJS to send the email
     try {
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          service_id: 'service_5bfcikw',
-          template_id: 'template_n8zf65m',
-          user_id: 'y7oXXtmyERXZdBaL4', 
-          template_params: {
-            from_name: formData.name,
-            from_email: formData.email,
-            subject: formData.subject,
-            message: formData.message,
-            to_email: 'mohammedrabeehpt@gmail.com',
-          }
-        }),
+      // Initialize EmailJS
+      emailjs.init("y7oXXtmyERXZdBaL4");
+      
+      // Send email directly with EmailJS
+      const response = await emailjs.send(
+        "service_5bfcikw",
+        "template_n8zf65m",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'mohammedrabeehpt@gmail.com',
+        }
+      );
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
       });
       
-      if (response.ok) {
-        toast({
-          title: "Message sent successfully!",
-          description: "Thank you for your message. I'll get back to you soon.",
-        });
-        
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        });
-      } else {
-        throw new Error('Failed to send message');
-      }
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
     } catch (error) {
       console.error('Error sending email:', error);
       toast({

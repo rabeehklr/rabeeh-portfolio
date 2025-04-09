@@ -133,6 +133,211 @@ const projectsData = {
     ],
     results: 'Created a secure cloud environment with properly configured access controls, network security, and monitoring. Identified and remediated several potential security vulnerabilities.',
     conclusion: 'This project highlighted the importance of security in cloud environments and provided practical experience in implementing security best practices. The knowledge gained has proven valuable in ensuring the security of all subsequent cloud projects.'
+  },
+  'serverless-api': {
+    title: 'Serverless API Development',
+    subtitle: 'Event-Driven Architecture with AWS Lambda',
+    date: 'October 2023 - December 2023',
+    tags: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'Serverless'],
+    coverImage: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80',
+    overview: 'Developed a serverless API using AWS Lambda, API Gateway, and DynamoDB, demonstrating event-driven architecture and cloud-native development practices for scalable and cost-effective solutions.',
+    requirements: [
+      'Design a RESTful API for data management',
+      'Implement serverless functions using AWS Lambda',
+      'Create a DynamoDB database for data persistence',
+      'Set up API Gateway for request routing',
+      'Implement authentication and authorization'
+    ],
+    technologies: [
+      { name: 'AWS Lambda', description: 'Serverless compute service' },
+      { name: 'API Gateway', description: 'API management and routing' },
+      { name: 'DynamoDB', description: 'NoSQL database service' },
+      { name: 'AWS IAM', description: 'Identity and access management' },
+      { name: 'Node.js', description: 'Runtime environment for Lambda functions' }
+    ],
+    implementation: [
+      {
+        title: 'API Design',
+        description: 'Designed a RESTful API with endpoints for creating, reading, updating, and deleting resources, following API design best practices.',
+        image: 'https://images.unsplash.com/photo-1566666179953-40d183d4b2ed?auto=format&fit=crop&q=80'
+      },
+      {
+        title: 'Lambda Functions',
+        description: 'Implemented Lambda functions for each API endpoint, with proper error handling and input validation.',
+        image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80'
+      },
+      {
+        title: 'Database Integration',
+        description: 'Set up DynamoDB tables with appropriate primary keys and indexes for efficient querying.',
+        image: 'https://images.unsplash.com/photo-1603322327561-7eae6af66eb6?auto=format&fit=crop&q=80'
+      }
+    ],
+    results: 'Successfully created a functional serverless API that scales automatically based on demand. The API provides robust data management capabilities with minimal operational overhead.',
+    conclusion: 'This project demonstrated the power of serverless architecture for building scalable and cost-effective cloud solutions. The event-driven approach simplified development and improved system responsiveness.'
+  },
+  'monitoring-stack': {
+    title: 'Cloud Monitoring Stack',
+    subtitle: 'Comprehensive Monitoring Solution',
+    date: 'January 2024 - February 2024',
+    tags: ['Prometheus', 'Grafana', 'ELK Stack', 'Monitoring'],
+    coverImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80',
+    overview: 'Implemented a comprehensive monitoring solution using Prometheus, Grafana, and ELK stack to track infrastructure performance, detect anomalies, and provide real-time insights into system behavior.',
+    requirements: [
+      'Set up metrics collection and storage',
+      'Create visualizations and dashboards',
+      'Implement log aggregation and analysis',
+      'Configure alerting for critical events',
+      'Ensure secure access to monitoring tools'
+    ],
+    technologies: [
+      { name: 'Prometheus', description: 'Metrics collection and storage' },
+      { name: 'Grafana', description: 'Visualization and dashboards' },
+      { name: 'Elasticsearch', description: 'Log storage and search' },
+      { name: 'Logstash', description: 'Log processing pipeline' },
+      { name: 'Kibana', description: 'Log visualization' }
+    ],
+    implementation: [
+      {
+        title: 'Metrics Collection',
+        description: 'Set up Prometheus to scrape metrics from various services and store them efficiently.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80'
+      },
+      {
+        title: 'Dashboard Creation',
+        description: 'Created Grafana dashboards for visualizing key performance indicators and system health metrics.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80'
+      },
+      {
+        title: 'Log Management',
+        description: 'Implemented ELK stack for collecting, processing, and analyzing logs from all system components.',
+        image: 'https://images.unsplash.com/photo-1542903660-eedba2cda473?auto=format&fit=crop&q=80'
+      }
+    ],
+    results: 'Established a robust monitoring infrastructure that provides comprehensive visibility into system performance and behavior. The solution enables proactive issue detection and faster troubleshooting.',
+    conclusion: 'This project highlighted the importance of comprehensive monitoring in cloud environments. The implemented solution improved operational efficiency and helped maintain high system reliability.'
+  },
+  'iac-templates': {
+    title: 'Infrastructure as Code Templates',
+    subtitle: 'Standardized Cloud Resource Provisioning',
+    date: 'March 2024 - Present',
+    tags: ['Terraform', 'CloudFormation', 'IaC', 'AWS'],
+    coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
+    overview: 'Created reusable Terraform and CloudFormation templates for standardized cloud resource provisioning, ensuring environment consistency and enabling rapid deployment of infrastructure.',
+    requirements: [
+      'Design modular and reusable IaC templates',
+      'Support multiple environments (dev, staging, production)',
+      'Implement best practices for security and compliance',
+      'Create documentation and usage examples',
+      'Establish version control and change management processes'
+    ],
+    technologies: [
+      { name: 'Terraform', description: 'Infrastructure as Code tool' },
+      { name: 'AWS CloudFormation', description: 'AWS-native IaC service' },
+      { name: 'Git', description: 'Version control' },
+      { name: 'GitHub Actions', description: 'CI/CD for infrastructure' },
+      { name: 'AWS', description: 'Cloud provider' }
+    ],
+    implementation: [
+      {
+        title: 'Template Design',
+        description: 'Designed modular templates for various infrastructure components, including networking, compute, storage, and security.',
+        image: 'https://images.unsplash.com/photo-1561883088-039e53143d73?auto=format&fit=crop&q=80'
+      },
+      {
+        title: 'Environment Configuration',
+        description: 'Created environment-specific configurations to support development, staging, and production deployments.',
+        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80'
+      },
+      {
+        title: 'CI/CD Pipeline',
+        description: 'Implemented automated testing and deployment pipeline for infrastructure changes.',
+        image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80'
+      }
+    ],
+    results: 'Created a library of reusable infrastructure templates that significantly reduce the time and effort required to provision new environments. The templates ensure consistency and adherence to best practices across all deployments.',
+    conclusion: 'This project demonstrated the value of Infrastructure as Code for managing cloud resources. The standardized templates improve efficiency, reduce errors, and enhance security in cloud deployments.'
+  },
+  'automation-scripts': {
+    title: 'Cloud Automation Scripts',
+    subtitle: 'Streamlining Cloud Operations',
+    date: 'January 2024 - March 2024',
+    tags: ['Python', 'Boto3', 'Azure SDK', 'Automation'],
+    coverImage: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&q=80',
+    overview: 'Developed a suite of Python scripts for automating routine cloud maintenance tasks, resource optimization, and automated reporting, improving operational efficiency and reducing manual effort.',
+    requirements: [
+      'Automate resource cleanup and optimization',
+      'Create scheduled reporting scripts',
+      'Implement cost management automation',
+      'Develop user management scripts',
+      'Create backup and recovery automation'
+    ],
+    technologies: [
+      { name: 'Python', description: 'Programming language' },
+      { name: 'Boto3', description: 'AWS SDK for Python' },
+      { name: 'Azure SDK', description: 'Azure SDK for Python' },
+      { name: 'AWS Lambda', description: 'Serverless compute for automation' },
+      { name: 'GitHub Actions', description: 'CI/CD for scripts' }
+    ],
+    implementation: [
+      {
+        title: 'Resource Optimization',
+        description: 'Created scripts to identify and remediate underutilized resources, including idle EC2 instances and unused storage volumes.',
+        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80'
+      },
+      {
+        title: 'Automated Reporting',
+        description: 'Developed scripts to generate and distribute regular reports on resource usage, costs, and security findings.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80'
+      },
+      {
+        title: 'Backup Management',
+        description: 'Implemented automated backup and snapshot management for critical resources.',
+        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80'
+      }
+    ],
+    results: 'Achieved significant time savings and operational improvements through automation. The scripts perform routine tasks consistently and reliably, reducing the risk of human error and freeing up time for more strategic activities.',
+    conclusion: 'This project highlighted the value of automation in cloud operations. The developed scripts improved efficiency, enhanced consistency, and reduced operational overhead in managing cloud resources.'
+  },
+  'aws-networking': {
+    title: 'AWS Networking Architecture',
+    subtitle: 'Secure and Scalable Network Design',
+    date: 'February 2024 - April 2024',
+    tags: ['AWS', 'VPC', 'Network Security', 'Cloud Architecture'],
+    coverImage: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80',
+    overview: 'Designed and implemented a multi-tier VPC architecture with public/private subnets, NAT gateways, and network ACLs for secure workload isolation, providing a foundation for secure and scalable application deployment.',
+    requirements: [
+      'Design a secure network architecture',
+      'Implement isolation between different environments',
+      'Set up secure internet access for private resources',
+      'Configure network monitoring and logging',
+      'Implement transit gateways for multi-VPC connectivity'
+    ],
+    technologies: [
+      { name: 'AWS VPC', description: 'Virtual Private Cloud' },
+      { name: 'AWS Transit Gateway', description: 'Network hub for VPC connectivity' },
+      { name: 'AWS Network ACLs', description: 'Network-level filtering' },
+      { name: 'AWS Security Groups', description: 'Instance-level filtering' },
+      { name: 'AWS Flow Logs', description: 'Network traffic logging' }
+    ],
+    implementation: [
+      {
+        title: 'VPC Design',
+        description: 'Designed a multi-tier VPC architecture with public, private, and data subnets across multiple availability zones.',
+        image: 'https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&q=80'
+      },
+      {
+        title: 'Security Implementation',
+        description: 'Implemented network ACLs, security groups, and NACLs to control traffic flow and secure resources.',
+        image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80'
+      },
+      {
+        title: 'Connectivity',
+        description: 'Set up internet and VPC connectivity using internet gateways, NAT gateways, and transit gateways.',
+        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80'
+      }
+    ],
+    results: 'Successfully created a secure and scalable network architecture that provides proper isolation between environments and controls access to resources. The architecture supports both internal and external connectivity while maintaining security.',
+    conclusion: 'This project demonstrated the importance of proper network design in cloud environments. The implemented architecture provides a solid foundation for secure application deployment and meets the requirements for scalability and security.'
   }
 };
 
