@@ -1,11 +1,12 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,11 +22,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/rabeeh-portfolio/#home' },
+    { name: 'About', href: '/rabeeh-portfolio/#about' },
+    { name: 'Projects', href: '/rabeeh-portfolio/#projects' },
+    { name: 'Experience', href: '/rabeeh-portfolio/#experience' },
+    { name: 'Contact', href: '/rabeeh-portfolio/#contact' },
   ];
 
   return (
@@ -33,7 +34,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="#home" className="text-xl font-bold text-gradient">Mohammed Rabeeh</a>
+            <a href="/" className="text-xl font-bold text-gradient">Mohammed Rabeeh</a>
           </div>
           
           {/* Desktop menu */}
@@ -43,7 +44,11 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-3 py-2 text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
+                  className={`px-3 py-2 text-sm font-medium ${
+                    location.pathname === '/' && location.hash === link.href.split('#')[1]
+                      ? 'text-primary'
+                      : 'text-foreground/70 hover:text-primary'
+                  } transition-colors`}
                 >
                   {link.name}
                 </a>
@@ -72,7 +77,11 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2 rounded-md text-base font-medium text-foreground/70 hover:text-primary hover:bg-secondary/50"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  location.pathname === '/' && location.hash === link.href.split('#')[1]
+                    ? 'text-primary'
+                    : 'text-foreground/70 hover:text-primary hover:bg-secondary/50'
+                }`}
               >
                 {link.name}
               </a>

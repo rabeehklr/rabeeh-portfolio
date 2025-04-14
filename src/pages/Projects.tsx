@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ParticleBackground from '@/components/ParticleBackground';
-
+import posecorrectionimg from '../assets/images/posecorrection.png';
 const Projects = () => {
   const navigate = useNavigate();
   
@@ -18,14 +18,14 @@ const Projects = () => {
 
   const additionalProjects = [
     {
-      id: 'serverless-api',
-      title: 'Serverless API Development',
-      description: 'Built a serverless REST API using AWS Lambda, API Gateway, and DynamoDB, demonstrating event-driven architecture and cloud-native development.',
-      tags: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'Serverless'],
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80',
-      icon: <Cloud className="h-10 w-10 text-primary" />,
+      id: 'real-time-exercise-pose-correction-system',
+      title: 'Real-Time Exercise Pose Correction System',
+      description: 'Developed a real-time exercise pose correction system using MediaPipe and OpenCV, with a Tkinter GUI for live feedback, rep counting, and data logging.',
+      tags: ['Python', 'OpenCV', 'MediaPipe', 'Tkinter'],
+      image: posecorrectionimg,
+      icon: <Code className="h-10 w-10 text-primary" />,
     },
-    {
+    /*{
       id: 'monitoring-stack',
       title: 'Cloud Monitoring Stack',
       description: 'Implemented a monitoring solution using Prometheus, Grafana, and ELK stack to track infrastructure performance and detect anomalies.',
@@ -56,7 +56,7 @@ const Projects = () => {
       tags: ['AWS', 'VPC', 'Network Security', 'Cloud Architecture'],
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80',
       icon: <Laptop className="h-10 w-10 text-primary" />,
-    },
+    },*/
   ];
   
   return (
@@ -79,9 +79,9 @@ const Projects = () => {
             </div>
             
             <div className="text-center mb-16">
-              <h1 className="text-4xl font-bold mb-4">Cloud Projects Portfolio</h1>
+              <h1 className="text-4xl font-bold mb-4">Projects Portfolio</h1>
               <p className="text-foreground/70 max-w-2xl mx-auto">
-                A collection of hands-on cloud engineering and DevOps projects showcasing my technical skills and learning journey.
+                A collection of projects showcasing my technical skills and learning journey.
               </p>
             </div>
             

@@ -1,7 +1,6 @@
-
 import { useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Link as LinkIcon, Calendar, Tag, Check, FileText, Server, Code } from 'lucide-react';
+import { ArrowLeft, Calendar, Tag, Check, FileText, Server, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import Navbar from '@/components/Navbar';
@@ -9,335 +8,202 @@ import Footer from '@/components/Footer';
 import ParticleBackground from '@/components/ParticleBackground';
 import { Card, CardContent } from '@/components/ui/card';
 
-// Project data - in a real app, this would come from a database or API
+// Project data with unique GitHub repo links
 const projectsData = {
-  'personal-cloud-lab': {
-    title: 'Personal Cloud Lab',
-    subtitle: 'Infrastructure as Code Learning Environment',
-    date: 'January 2023 - March 2023',
-    tags: ['Terraform', 'AWS', 'IaC', 'Cloud Simulation'],
-    coverImage: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80',
-    overview: 'A personal home lab environment set up to simulate cloud infrastructure, providing a hands-on platform to practice Infrastructure as Code principles and AWS resource management without incurring significant costs.',
+  'containerized-backend-for-power-analytics': {
+    title: 'Containerized Backend for Power Analytics',
+    subtitle: 'DevOps-Driven Real-Time Monitoring Solution',
+    date: 'September 2024 - November 2024',
+    tags: ['Docker', 'Containerization', 'PostgreSQL', 'Flask-SocketIO', 'DevOps'],
+    github: 'https://github.com/rabeehklr/EnervueNILM.git',
+    overview: 'Created a Docker-based backend to process real-time energy data and serve predictions via APIs and streams, emphasizing DevOps practices for scalability and deployment efficiency.',
     requirements: [
-      'Create a cost-effective environment for learning cloud infrastructure',
-      'Implement infrastructure as code using Terraform',
-      'Set up automated provisioning and teardown of resources',
-      'Configure networking similar to cloud providers',
-      'Implement security best practices for access management'
+      'Deploy isolated services for data ingestion, prediction, and API delivery',
+      'Ensure real-time processing with minimal latency',
+      'Maintain scalability and portability across environments',
+      'Integrate persistent storage for energy data'
     ],
     technologies: [
-      { name: 'Terraform', description: 'Used for defining infrastructure as code' },
-      { name: 'AWS', description: 'Primary cloud provider being simulated' },
-      { name: 'VirtualBox', description: 'Virtualization platform for local resources' },
-      { name: 'Git', description: 'Version control for infrastructure code' },
-      { name: 'Bash Scripting', description: 'Automation of repetitive tasks' }
+      { name: 'Docker', description: 'Containerization for service isolation' },
+      { name: 'Containerization', description: 'General practice of isolating services (via Docker Compose)' },
+      { name: 'PostgreSQL', description: 'Database for storing energy data and predictions' },
+      { name: 'Flask-SocketIO', description: 'API and real-time streaming framework' },
+      { name: 'DevOps', description: 'Practices for deployment and system management' }
     ],
     implementation: [
       {
-        title: 'Infrastructure Setup',
-        description: 'Created Terraform modules to define the lab environment, including networking, compute, and storage resources.',
-        image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80'
+        "title": "Service Containerization",
+        "description": "Defined containers for database, data ingestion, predictor, and API services using Docker, ensuring modularity."
       },
       {
-        title: 'Networking Configuration',
-        description: 'Implemented virtual networks mimicking AWS VPC architecture with subnets, routing tables, and security groups.',
-        image: 'https://images.unsplash.com/photo-1545161296-d9c2c241f2ad?auto=format&fit=crop&q=80'
+        "title": "Orchestration Setup",
+        "description": "Used Docker Compose to manage service dependencies, networking, and health checks for reliable operation."
       },
       {
-        title: 'Resource Provisioning',
-        description: 'Developed automated workflows for provisioning and deprovisioning resources as needed to minimize resource usage.',
-        image: 'https://images.unsplash.com/photo-1560732488-7b5f4d50cb6b?auto=format&fit=crop&q=80'
+        "title": "Real-Time Integration",
+        "description": "Integrated Flask-SocketIO for live data streaming and PostgreSQL for persistent storage and retrieval."
+      },
+      {
+        "title": "Data Ingestion Pipeline",
+        "description": "Developed a Mechanism to ingest the received power consumption data from ESP32 into the database via a Flask endpoint."
+      },
+      {
+        "title": "NILM Predictive Modeling",
+        "description": "Deployed a CNN-LSTM model to predict appliance-specific power usage and status from aggregated data."
+      },
+      {
+        "title": "Anomaly and Cost Analytics",
+        "description": "Enabled real-time anomaly detection and cost estimation using dynamic thresholds and usage calculations."
       }
     ],
-    results: 'Successfully created a functional local cloud lab that closely resembles AWS infrastructure. Gained hands-on experience with infrastructure as code principles and AWS resource management without incurring significant cloud costs.',
-    conclusion: 'This project demonstrated the value of learning cloud technologies through practical implementation. The skills gained have laid a foundation for more advanced cloud engineering projects and have provided confidence in working with cloud infrastructure at scale.'
+    results: 'Deployed a scalable backend with consistent real-time performance, achieving target latency and portability across environments, validated through simulated energy data processing.',
+    conclusion: 'This project highlighted DevOps expertise in containerization and orchestration, preparing me for scalable system design and deployment in production environments.'
   },
-  'containerized-web-app': {
-    title: 'Containerized Web Application',
-    subtitle: 'Microservices Architecture with CI/CD Pipeline',
-    date: 'April 2023 - June 2023',
-    tags: ['Docker', 'GitHub Actions', 'Microservices', 'CI/CD'],
-    coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80',
-    overview: 'A simple web application built using containerization principles and deployed with a continuous integration and continuous deployment pipeline, demonstrating modern DevOps practices.',
+  'enervue:-a-Real-time-Power-monitoring-mobile-app': {
+    title: 'EnerVue: A Real-Time Power Monitoring Mobile App',
+    subtitle: 'Real-Time Energy Insights Interface',
+    date: 'December 2024 - February 2025',
+    tags: ['Flutter', 'Firebase Auth', 'Socket.IO', 'Mobile Development'],
+    github: 'https://github.com/rabeehklr/EnervueFlutter.git',
+    overview: 'Developed a Flutter-based mobile app integrating real-time energy data via Socket.IO, with Firebase Auth for secure access, delivering appliance monitoring, anomaly detection, and cost insights.',
     requirements: [
-      'Implement a web application using microservices architecture',
-      'Containerize all components using Docker',
-      'Set up automated testing and deployment with GitHub Actions',
-      'Ensure components can scale independently',
-      'Implement monitoring and logging'
+      'Secure user authentication with email and password',
+      'Real-time display of appliance statuses and usage metrics',
+      'Anomaly detection with notifications and cost estimation features',
+      'Cross-platform compatibility with a responsive UI'
     ],
     technologies: [
-      { name: 'Docker', description: 'Containerization platform' },
-      { name: 'GitHub Actions', description: 'CI/CD pipeline' },
-      { name: 'Node.js', description: 'Backend services' },
-      { name: 'React', description: 'Frontend interface' },
-      { name: 'MongoDB', description: 'Database' }
+      { name: 'Flutter', description: 'Framework for cross-platform mobile development' },
+      { name: 'Firebase Auth', description: 'Authentication for secure user access' },
+      { name: 'Socket.IO', description: 'Real-time data streaming from backend' },
+      { name: 'Mobile Development', description: 'Building for Android' }
     ],
     implementation: [
       {
-        title: 'Microservices Design',
-        description: 'Designed and implemented independent services for user authentication, data processing, and frontend rendering.',
-        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80'
+        title: 'Authentication Module',
+        description: 'Implemented Firebase Auth for email/password login with loading and error handling.'
       },
       {
-        title: 'Containerization',
-        description: 'Created Docker images for each service with optimized builds and minimal footprints.',
-        image: 'https://images.unsplash.com/photo-1605745341289-27e3dea5deb1?auto=format&fit=crop&q=80'
+        title: 'Real-Time Dashboard',
+        description: 'Built a dashboard with Socket.IO integration to display live appliance data and anomalies.'
       },
       {
-        title: 'CI/CD Pipeline',
-        description: 'Implemented GitHub Actions workflows for automated testing, building, and deployment of container images.',
-        image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80'
+        title: 'Detailed Appliance Consumption and Anomaly data',
+        description: 'Consumption and anomaly data of each and every appliance can be viewed .'
+      },
+      {
+        title: 'Cost and Reporting',
+        description: 'Added cost estimation using regional rates and report generation.'
+      },
+      {
+        title: 'Notification System',
+        description: 'Developed a push notification system to alert users of anomalies and usage thresholds.'
+      },
+      {
+        title: 'UI Customization',
+        description: 'Designed customizable themes for enhanced user experience.'
       }
     ],
-    results: 'Successfully created a containerized web application with automated deployment processes. The application demonstrates proper separation of concerns and scalability potential.',
-    conclusion: 'This project provided valuable experience with containerization and CI/CD principles. The microservices architecture proved effective for independent component development and deployment, and the automated pipelines significantly improved the development workflow.'
+    results: 'Delivered a responsive app with real-time updates, accurate cost projections, and anomaly alerts, successfully running on Android.',
+    conclusion: 'EnerVue showcased mobile development skills and real-time system integration, offering a practical energy management tool and reinforcing UI/UX design capabilities.'
   },
-  'cloud-security-analysis': {
-    title: 'Cloud Security Analysis',
-    subtitle: 'Security Best Practices Implementation',
-    date: 'July 2023 - September 2023',
-    tags: ['Cloud Security', 'IAM', 'Network Configuration', 'Best Practices'],
-    coverImage: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80',
-    overview: 'A comprehensive analysis of cloud security best practices, implemented as a practical project to understand and apply security configurations in cloud environments.',
+  'machine-learning-model-for-energy-disaggregation': {
+    title: 'Machine Learning Model for Energy Disaggregation',
+    subtitle: 'Deep Learning for Appliance Usage Prediction',
+    date: 'June 2024 - August 2024',
+    tags: ['Python', 'PyTorch', 'Pandas', 'NumPy', 'Matplotlib'],
+    github: 'https://github.com/rabeehklr/NILM_ModelTraining.git',
+    overview: 'Developed a deep learning model using a CNN-LSTM architecture to disaggregate total energy consumption into individual appliance usage, providing a foundation for non-intrusive load monitoring (NILM) applications.',
     requirements: [
-      'Analyze common cloud security vulnerabilities',
-      'Implement AWS security best practices',
-      'Configure proper identity and access management',
-      'Set up network security configurations',
-      'Create security monitoring and alerting'
+      'Process electrical data to predict appliance statuses and power usage',
+      'Develop a scalable model for real-time energy disaggregation',
+      'Visualize training progress and performance metrics',
+      'Handle synthetic or real-world energy datasets'
     ],
     technologies: [
-      { name: 'AWS IAM', description: 'Identity and access management' },
-      { name: 'AWS CloudTrail', description: 'Audit logging' },
-      { name: 'AWS Config', description: 'Configuration compliance' },
-      { name: 'AWS Security Hub', description: 'Security posture management' },
-      { name: 'AWS GuardDuty', description: 'Threat detection' }
+      { name: 'Python', description: 'Core language for model development' },
+      { name: 'PyTorch', description: 'Framework for building and training the CNN-LSTM model' },
+      { name: 'Pandas', description: 'Data manipulation and preprocessing' },
+      { name: 'NumPy', description: 'Numerical operations for data handling' },
+      { name: 'Matplotlib', description: 'Visualization of training loss and metrics' }
     ],
     implementation: [
       {
-        title: 'IAM Configuration',
-        description: 'Implemented least privilege access policies and multi-factor authentication for all user accounts.',
-        image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80'
+        title: 'Data Preprocessing',
+        description: 'Loaded and transformed energy data into time-series sequences using Pandas and NumPy for model input.'
       },
       {
-        title: 'Network Security',
-        description: 'Configured security groups, network ACLs, and VPC flow logs to secure network traffic.',
-        image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80'
+        title: 'Model Architecture',
+        description: 'Designed a hybrid CNN-LSTM model to extract spatial features and capture temporal dependencies in energy data.'
       },
       {
-        title: 'Monitoring & Alerting',
-        description: 'Set up CloudWatch alarms and Security Hub to monitor for security events and compliance violations.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80'
+        title: 'Training and Visualization',
+        description: 'Trained the model with PyTorch, optimizing for status and power prediction, and visualized results with Matplotlib.'
+      },
+      {
+        title: 'Hyperparameter Tuning',
+        description: 'Adjusted learning rates and layer sizes to optimize model performance and convergence.'
+      },
+      {
+        title: 'Model Validation',
+        description: 'Performed cross-validation to ensure robustness across different datasets.'
+      },
+      {
+        title: 'Deployment Preparation',
+        description: 'Packaged the model for integration with real-time energy monitoring systems.'
       }
     ],
-    results: 'Created a secure cloud environment with properly configured access controls, network security, and monitoring. Identified and remediated several potential security vulnerabilities.',
-    conclusion: 'This project highlighted the importance of security in cloud environments and provided practical experience in implementing security best practices. The knowledge gained has proven valuable in ensuring the security of all subsequent cloud projects.'
+    results: 'Achieved over 85% accuracy in appliance status prediction and a low error margin in power estimation, with training progress effectively visualized for analysis.',
+    conclusion: 'This project solidified skills in deep learning and time-series analysis, proving the potential of AI in energy management solutions and laying groundwork for real-time applications.'
   },
-  'serverless-api': {
-    title: 'Serverless API Development',
-    subtitle: 'Event-Driven Architecture with AWS Lambda',
-    date: 'October 2023 - December 2023',
-    tags: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'Serverless'],
-    coverImage: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80',
-    overview: 'Developed a serverless API using AWS Lambda, API Gateway, and DynamoDB, demonstrating event-driven architecture and cloud-native development practices for scalable and cost-effective solutions.',
+  'real-time-exercise-pose-correction-system': {
+    title: 'Real-Time Exercise Pose Correction System',
+    subtitle: 'Computer Vision Fitness Tracking Tool',
+    date: 'March 2025 - May 2025',
+    tags: ['Python', 'OpenCV', 'MediaPipe', 'Tkinter', 'Real-Time'],
+    github: 'https://github.com/rabeehklr/Exercise-Pose-Detection-System.git',
+    overview: 'Built a desktop application using MediaPipe and OpenCV to monitor exercise poses in real-time, providing feedback and rep counting through a Tkinter GUI for fitness improvement.',
     requirements: [
-      'Design a RESTful API for data management',
-      'Implement serverless functions using AWS Lambda',
-      'Create a DynamoDB database for data persistence',
-      'Set up API Gateway for request routing',
-      'Implement authentication and authorization'
+      'Real-time pose detection and angle tracking for exercises',
+      'Feedback on form correctness and repetition counting',
+      'Interactive GUI with live video and demo playback',
+      'Data logging for exercise analysis'
     ],
     technologies: [
-      { name: 'AWS Lambda', description: 'Serverless compute service' },
-      { name: 'API Gateway', description: 'API management and routing' },
-      { name: 'DynamoDB', description: 'NoSQL database service' },
-      { name: 'AWS IAM', description: 'Identity and access management' },
-      { name: 'Node.js', description: 'Runtime environment for Lambda functions' }
+      { name: 'Python', description: 'Core language for application logic' },
+      { name: 'OpenCV', description: 'Video capture and image processing' },
+      { name: 'MediaPipe', description: 'Pose landmark detection' },
+      { name: 'Tkinter', description: 'GUI framework for desktop interface' },
+      { name: 'Real-Time', description: 'Processing for live feedback' }
     ],
     implementation: [
       {
-        title: 'API Design',
-        description: 'Designed a RESTful API with endpoints for creating, reading, updating, and deleting resources, following API design best practices.',
-        image: 'https://images.unsplash.com/photo-1566666179953-40d183d4b2ed?auto=format&fit=crop&q=80'
+        title: 'Pose Tracking',
+        description: 'Integrated MediaPipe with OpenCV to detect landmarks and calculate joint angles for exercise states.'
       },
       {
-        title: 'Lambda Functions',
-        description: 'Implemented Lambda functions for each API endpoint, with proper error handling and input validation.',
-        image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80'
+        title: 'State Machine',
+        description: 'Designed a state machine to track exercise phases and provide feedback on form accuracy.'
       },
       {
-        title: 'Database Integration',
-        description: 'Set up DynamoDB tables with appropriate primary keys and indexes for efficient querying.',
-        image: 'https://images.unsplash.com/photo-1603322327561-7eae6af66eb6?auto=format&fit=crop&q=80'
+        title: 'GUI Development',
+        description: 'Created a Tkinter interface with live video, demo playback, and rep stats, updated via threading.'
+      },
+      {
+        title: 'Feedback Calibration',
+        description: 'Calibrated angle thresholds and timing to improve feedback accuracy for various exercises.'
+      },
+      {
+        title: 'Data Logging System',
+        description: 'Implemented a logging mechanism to record exercise data for post-session analysis.'
+      },
+      {
+        title: 'User Profile Management',
+        description: 'Added functionality to save and load user-specific settings and exercise history.'
       }
     ],
-    results: 'Successfully created a functional serverless API that scales automatically based on demand. The API provides robust data management capabilities with minimal operational overhead.',
-    conclusion: 'This project demonstrated the power of serverless architecture for building scalable and cost-effective cloud solutions. The event-driven approach simplified development and improved system responsiveness.'
-  },
-  'monitoring-stack': {
-    title: 'Cloud Monitoring Stack',
-    subtitle: 'Comprehensive Monitoring Solution',
-    date: 'January 2024 - February 2024',
-    tags: ['Prometheus', 'Grafana', 'ELK Stack', 'Monitoring'],
-    coverImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80',
-    overview: 'Implemented a comprehensive monitoring solution using Prometheus, Grafana, and ELK stack to track infrastructure performance, detect anomalies, and provide real-time insights into system behavior.',
-    requirements: [
-      'Set up metrics collection and storage',
-      'Create visualizations and dashboards',
-      'Implement log aggregation and analysis',
-      'Configure alerting for critical events',
-      'Ensure secure access to monitoring tools'
-    ],
-    technologies: [
-      { name: 'Prometheus', description: 'Metrics collection and storage' },
-      { name: 'Grafana', description: 'Visualization and dashboards' },
-      { name: 'Elasticsearch', description: 'Log storage and search' },
-      { name: 'Logstash', description: 'Log processing pipeline' },
-      { name: 'Kibana', description: 'Log visualization' }
-    ],
-    implementation: [
-      {
-        title: 'Metrics Collection',
-        description: 'Set up Prometheus to scrape metrics from various services and store them efficiently.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80'
-      },
-      {
-        title: 'Dashboard Creation',
-        description: 'Created Grafana dashboards for visualizing key performance indicators and system health metrics.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80'
-      },
-      {
-        title: 'Log Management',
-        description: 'Implemented ELK stack for collecting, processing, and analyzing logs from all system components.',
-        image: 'https://images.unsplash.com/photo-1542903660-eedba2cda473?auto=format&fit=crop&q=80'
-      }
-    ],
-    results: 'Established a robust monitoring infrastructure that provides comprehensive visibility into system performance and behavior. The solution enables proactive issue detection and faster troubleshooting.',
-    conclusion: 'This project highlighted the importance of comprehensive monitoring in cloud environments. The implemented solution improved operational efficiency and helped maintain high system reliability.'
-  },
-  'iac-templates': {
-    title: 'Infrastructure as Code Templates',
-    subtitle: 'Standardized Cloud Resource Provisioning',
-    date: 'March 2024 - Present',
-    tags: ['Terraform', 'CloudFormation', 'IaC', 'AWS'],
-    coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
-    overview: 'Created reusable Terraform and CloudFormation templates for standardized cloud resource provisioning, ensuring environment consistency and enabling rapid deployment of infrastructure.',
-    requirements: [
-      'Design modular and reusable IaC templates',
-      'Support multiple environments (dev, staging, production)',
-      'Implement best practices for security and compliance',
-      'Create documentation and usage examples',
-      'Establish version control and change management processes'
-    ],
-    technologies: [
-      { name: 'Terraform', description: 'Infrastructure as Code tool' },
-      { name: 'AWS CloudFormation', description: 'AWS-native IaC service' },
-      { name: 'Git', description: 'Version control' },
-      { name: 'GitHub Actions', description: 'CI/CD for infrastructure' },
-      { name: 'AWS', description: 'Cloud provider' }
-    ],
-    implementation: [
-      {
-        title: 'Template Design',
-        description: 'Designed modular templates for various infrastructure components, including networking, compute, storage, and security.',
-        image: 'https://images.unsplash.com/photo-1561883088-039e53143d73?auto=format&fit=crop&q=80'
-      },
-      {
-        title: 'Environment Configuration',
-        description: 'Created environment-specific configurations to support development, staging, and production deployments.',
-        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80'
-      },
-      {
-        title: 'CI/CD Pipeline',
-        description: 'Implemented automated testing and deployment pipeline for infrastructure changes.',
-        image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80'
-      }
-    ],
-    results: 'Created a library of reusable infrastructure templates that significantly reduce the time and effort required to provision new environments. The templates ensure consistency and adherence to best practices across all deployments.',
-    conclusion: 'This project demonstrated the value of Infrastructure as Code for managing cloud resources. The standardized templates improve efficiency, reduce errors, and enhance security in cloud deployments.'
-  },
-  'automation-scripts': {
-    title: 'Cloud Automation Scripts',
-    subtitle: 'Streamlining Cloud Operations',
-    date: 'January 2024 - March 2024',
-    tags: ['Python', 'Boto3', 'Azure SDK', 'Automation'],
-    coverImage: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&q=80',
-    overview: 'Developed a suite of Python scripts for automating routine cloud maintenance tasks, resource optimization, and automated reporting, improving operational efficiency and reducing manual effort.',
-    requirements: [
-      'Automate resource cleanup and optimization',
-      'Create scheduled reporting scripts',
-      'Implement cost management automation',
-      'Develop user management scripts',
-      'Create backup and recovery automation'
-    ],
-    technologies: [
-      { name: 'Python', description: 'Programming language' },
-      { name: 'Boto3', description: 'AWS SDK for Python' },
-      { name: 'Azure SDK', description: 'Azure SDK for Python' },
-      { name: 'AWS Lambda', description: 'Serverless compute for automation' },
-      { name: 'GitHub Actions', description: 'CI/CD for scripts' }
-    ],
-    implementation: [
-      {
-        title: 'Resource Optimization',
-        description: 'Created scripts to identify and remediate underutilized resources, including idle EC2 instances and unused storage volumes.',
-        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80'
-      },
-      {
-        title: 'Automated Reporting',
-        description: 'Developed scripts to generate and distribute regular reports on resource usage, costs, and security findings.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80'
-      },
-      {
-        title: 'Backup Management',
-        description: 'Implemented automated backup and snapshot management for critical resources.',
-        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80'
-      }
-    ],
-    results: 'Achieved significant time savings and operational improvements through automation. The scripts perform routine tasks consistently and reliably, reducing the risk of human error and freeing up time for more strategic activities.',
-    conclusion: 'This project highlighted the value of automation in cloud operations. The developed scripts improved efficiency, enhanced consistency, and reduced operational overhead in managing cloud resources.'
-  },
-  'aws-networking': {
-    title: 'AWS Networking Architecture',
-    subtitle: 'Secure and Scalable Network Design',
-    date: 'February 2024 - April 2024',
-    tags: ['AWS', 'VPC', 'Network Security', 'Cloud Architecture'],
-    coverImage: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80',
-    overview: 'Designed and implemented a multi-tier VPC architecture with public/private subnets, NAT gateways, and network ACLs for secure workload isolation, providing a foundation for secure and scalable application deployment.',
-    requirements: [
-      'Design a secure network architecture',
-      'Implement isolation between different environments',
-      'Set up secure internet access for private resources',
-      'Configure network monitoring and logging',
-      'Implement transit gateways for multi-VPC connectivity'
-    ],
-    technologies: [
-      { name: 'AWS VPC', description: 'Virtual Private Cloud' },
-      { name: 'AWS Transit Gateway', description: 'Network hub for VPC connectivity' },
-      { name: 'AWS Network ACLs', description: 'Network-level filtering' },
-      { name: 'AWS Security Groups', description: 'Instance-level filtering' },
-      { name: 'AWS Flow Logs', description: 'Network traffic logging' }
-    ],
-    implementation: [
-      {
-        title: 'VPC Design',
-        description: 'Designed a multi-tier VPC architecture with public, private, and data subnets across multiple availability zones.',
-        image: 'https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&q=80'
-      },
-      {
-        title: 'Security Implementation',
-        description: 'Implemented network ACLs, security groups, and NACLs to control traffic flow and secure resources.',
-        image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80'
-      },
-      {
-        title: 'Connectivity',
-        description: 'Set up internet and VPC connectivity using internet gateways, NAT gateways, and transit gateways.',
-        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80'
-      }
-    ],
-    results: 'Successfully created a secure and scalable network architecture that provides proper isolation between environments and controls access to resources. The architecture supports both internal and external connectivity while maintaining security.',
-    conclusion: 'This project demonstrated the importance of proper network design in cloud environments. The implemented architecture provides a solid foundation for secure application deployment and meets the requirements for scalability and security.'
+    results: 'Achieved over 90% accuracy in rep counting and provided real-time feedback, with a stable GUI displaying live data and logged metrics for analysis.',
+    conclusion: 'This project demonstrated computer vision and GUI development expertise, delivering a practical fitness tool and reinforcing real-time system design skills.'
   }
 };
 
@@ -346,14 +212,11 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const animationRef = useRef<HTMLDivElement>(null);
   
-  // Get project data
   const project = projectId ? projectsData[projectId as keyof typeof projectsData] : null;
   
   useEffect(() => {
-    // Set page title
     document.title = project ? `${project.title} | Rabeeh Portfolio` : "Project Not Found";
     
-    // Animation effect
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -366,7 +229,6 @@ const ProjectDetail = () => {
       { threshold: 0.1 }
     );
     
-    // Observe all sections with animation
     const sections = document.querySelectorAll('.animate-on-scroll');
     sections.forEach((section) => {
       observer.observe(section);
@@ -401,12 +263,7 @@ const ProjectDetail = () => {
       <Navbar />
       
       <div className="h-[40vh] relative overflow-hidden">
-        <img 
-          src={project.coverImage} 
-          alt={project.title} 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 to-background flex items-end">
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-sm flex items-end">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-8">
             <Button 
               variant="outline" 
@@ -463,16 +320,9 @@ const ProjectDetail = () => {
               <h2 className="text-2xl font-bold mb-4">Implementation</h2>
               <div className="space-y-8">
                 {project.implementation.map((step, index) => (
-                  <div key={index} className="glassmorphism rounded-lg overflow-hidden">
-                    <img 
-                      src={step.image} 
-                      alt={step.title} 
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-4">
-                      <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                      <p className="text-foreground/80">{step.description}</p>
-                    </div>
+                  <div key={index} className="glassmorphism rounded-lg p-4">
+                    <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                    <p className="text-foreground/80">{step.description}</p>
                   </div>
                 ))}
               </div>
@@ -518,21 +368,9 @@ const ProjectDetail = () => {
                   <Separator className="mb-4" />
                   <ul className="space-y-2">
                     <li>
-                      <a href="#" className="flex items-center text-primary hover:text-primary/80 transition-colors">
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center text-primary hover:text-primary/80 transition-colors">
                         <Code className="h-4 w-4 mr-2" />
                         <span>Source Code</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="flex items-center text-primary hover:text-primary/80 transition-colors">
-                        <LinkIcon className="h-4 w-4 mr-2" />
-                        <span>Live Demo</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="flex items-center text-primary hover:text-primary/80 transition-colors">
-                        <FileText className="h-4 w-4 mr-2" />
-                        <span>Documentation</span>
                       </a>
                     </li>
                   </ul>

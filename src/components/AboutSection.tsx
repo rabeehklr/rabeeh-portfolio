@@ -38,16 +38,16 @@ const AboutSection = () => {
   ];
 
   const techSkills = [
-    { name: 'AWS', logo: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg', level: 3 },
-    { name: 'Azure', logo: 'https://cdn.worldvectorlogo.com/logos/azure-1.svg', level: 3 },
-    { name: 'Terraform', logo: 'https://cdn.worldvectorlogo.com/logos/terraform-enterprise.svg', level: 2 },
-    { name: 'Docker', logo: 'https://cdn.worldvectorlogo.com/logos/docker.svg', level: 3 },
-    { name: 'Kubernetes', logo: 'https://cdn.worldvectorlogo.com/logos/kubernets.svg', level: 2 },
-    { name: 'Python', logo: 'https://cdn.worldvectorlogo.com/logos/python-5.svg', level: 4 },
+    { name: 'AWS', logo: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg', level: 2 },
+    { name: 'Azure', logo: 'https://cdn.worldvectorlogo.com/logos/azure-1.svg', level: 1 },
     { name: 'Linux', logo: 'https://cdn.worldvectorlogo.com/logos/linux-tux.svg', level: 3 },
-    { name: 'Git', logo: 'https://cdn.worldvectorlogo.com/logos/git-icon.svg', level: 4 },
-    { name: 'CI/CD', logo: 'https://cdn.worldvectorlogo.com/logos/jenkins-1.svg', level: 2 },
+    { name: 'Docker', logo: 'https://cdn.worldvectorlogo.com/logos/docker.svg', level: 2 },
     { name: 'Networking', logo: 'https://cdn.worldvectorlogo.com/logos/cisco-2.svg', level: 3 },
+    { name: 'Python', logo: 'https://cdn.worldvectorlogo.com/logos/python-5.svg', level: 3 },
+    { name: 'Git', logo: 'https://cdn.worldvectorlogo.com/logos/git-icon.svg', level: 4 },
+    { name: 'Terraform', logo: 'https://cdn.worldvectorlogo.com/logos/terraform-enterprise.svg', level: 1 },
+    { name: 'CI/CD', logo: 'https://cdn.worldvectorlogo.com/logos/jenkins-1.svg', level: 1 },
+    { name: 'Kubernetes', logo: 'https://cdn.worldvectorlogo.com/logos/kubernets.svg', level: 1 },
   ];
 
   const renderStars = (level) => {

@@ -3,27 +3,30 @@ import { ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import containerizedBackendImg from '../assets/images/containerizedbackend.png';
+import flutterAppImg from '../assets/images/flutterapp.png';
+import neuralNetworkImg from '../assets/images/neuralnetworknilm.png';
 
 const ProjectsSection = () => {
   const navigate = useNavigate();
   const projects = [{
-    id: 'personal-cloud-lab',
-    title: 'Personal Cloud Lab',
-    description: 'Developed a home lab environment using Terraform to simulate cloud infrastructure, practicing IaC principles and AWS resource management.',
-    tags: ['Terraform', 'AWS', 'IaC', 'Cloud Simulation'],
-    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80'
+    id: 'containerized-backend-for-power-analytics',
+    title: 'Containerized Backend for Power Analytics',
+    description: 'Developed a Docker-based backend with Docker Compose orchestration, integrating PostgreSQL and Flask-SocketIO for real-time energy data processing and API delivery, emphasizing DevOps practices.',
+    tags: ['Docker', 'Containerization', 'PostgreSQL', 'Flask-SocketIO', 'DevOps'],
+    image: containerizedBackendImg
   }, {
-    id: 'containerized-web-app',
-    title: 'Containerized Web Application',
-    description: 'Created a Docker-based web application demonstrating containerization, GitHub Actions for CI/CD, and basic microservices architecture.',
-    tags: ['Docker', 'GitHub Actions', 'Microservices', 'CI/CD'],
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80'
+    id: 'enervue:-a-Real-time-Power-monitoring-mobile-app',
+    title: 'EnerVue: A Real-Time Power Monitoring Mobile App',
+    description: 'Developed a Flutter-based mobile app integrating real-time energy data via Socket.IO, featuring anomaly detection, cost estimation, and report generation for energy insights.',
+    tags: ['Flutter', 'Firebase Auth', 'Socket.IO', 'Mobile Development'],
+    image: flutterAppImg
   }, {
-    id: 'cloud-security-analysis',
-    title: 'Cloud Security Analysis',
-    description: 'Implemented a small-scale project analyzing cloud security best practices, including basic network security configurations and access management.',
-    tags: ['Cloud Security', 'IAM', 'Network Configuration', 'Best Practices'],
-    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80'
+    id: 'machine-learning-model-for-energy-disaggregation',
+    title: 'Machine Learning Model for Energy Disaggregation',
+    description: 'Built a deep learning model using a hybrid CNN-LSTM architecture to disaggregate energy consumption, enabling appliance-level usage predictions and energy monitoring.',
+    tags: ['Python', 'PyTorch', 'Pandas', 'NumPy', 'Matplotlib'],
+    image: neuralNetworkImg
   }];
   return <section id="projects" className="section-padding">
       <div className="max-w-7xl mx-auto">
