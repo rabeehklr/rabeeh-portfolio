@@ -13,7 +13,7 @@ const projectsData = {
   'containerized-backend-for-power-analytics': {
     title: 'Containerized Backend for Power Analytics',
     subtitle: 'DevOps-Driven Real-Time Monitoring Solution',
-    date: 'September 2024 - November 2024',
+    date: 'December 2024 - February 2025',
     tags: ['Docker', 'Containerization', 'PostgreSQL', 'Flask-SocketIO', 'DevOps'],
     github: 'https://github.com/rabeehklr/EnervueNILM.git',
     overview: 'Created a Docker-based backend to process real-time energy data and serve predictions via APIs and streams, emphasizing DevOps practices for scalability and deployment efficiency.',
@@ -62,7 +62,7 @@ const projectsData = {
   'enervue:-a-Real-time-Power-monitoring-mobile-app': {
     title: 'EnerVue: A Real-Time Power Monitoring Mobile App',
     subtitle: 'Real-Time Energy Insights Interface',
-    date: 'December 2024 - February 2025',
+    date: 'June 2024 - August 2024',
     tags: ['Flutter', 'Firebase Auth', 'Socket.IO', 'Mobile Development'],
     github: 'https://github.com/rabeehklr/EnervueFlutter.git',
     overview: 'Developed a Flutter-based mobile app integrating real-time energy data via Socket.IO, with Firebase Auth for secure access, delivering appliance monitoring, anomaly detection, and cost insights.',
@@ -89,7 +89,7 @@ const projectsData = {
       },
       {
         title: 'Detailed Appliance Consumption and Anomaly data',
-        description: 'Consumption and anomaly data of each and every appliance can be viewed .'
+        description: 'Consumption and anomaly details of each  appliance can be viewed .'
       },
       {
         title: 'Cost and Reporting',
@@ -110,7 +110,7 @@ const projectsData = {
   'machine-learning-model-for-energy-disaggregation': {
     title: 'Machine Learning Model for Energy Disaggregation',
     subtitle: 'Deep Learning for Appliance Usage Prediction',
-    date: 'June 2024 - August 2024',
+    date: 'September 2024 - November 2024',
     tags: ['Python', 'PyTorch', 'Pandas', 'NumPy', 'Matplotlib'],
     github: 'https://github.com/rabeehklr/NILM_ModelTraining.git',
     overview: 'Developed a deep learning model using a CNN-LSTM architecture to disaggregate total energy consumption into individual appliance usage, providing a foundation for non-intrusive load monitoring (NILM) applications.',
@@ -159,7 +159,7 @@ const projectsData = {
   'real-time-exercise-pose-correction-system': {
     title: 'Real-Time Exercise Pose Correction System',
     subtitle: 'Computer Vision Fitness Tracking Tool',
-    date: 'March 2025 - May 2025',
+    date: 'January 2024 - April 2024 ',
     tags: ['Python', 'OpenCV', 'MediaPipe', 'Tkinter', 'Real-Time'],
     github: 'https://github.com/rabeehklr/Exercise-Pose-Detection-System.git',
     overview: 'Built a desktop application using MediaPipe and OpenCV to monitor exercise poses in real-time, providing feedback and rep counting through a Tkinter GUI for fitness improvement.',
