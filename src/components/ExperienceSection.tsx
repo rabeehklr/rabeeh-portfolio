@@ -1,44 +1,43 @@
-
 import { GraduationCap } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 const ExperienceSection = () => {
   const experiences = [
     {
-      role: 'Cloud & DevOps Learner',
+      role: 'Network Engineering Learner',
       company: 'Personal Development',
       period: '2024 - Present',
-      description: 'Initiated self-directed learning to explore cloud computing and DevOps practices, focusing on building practical skills in infrastructure and automation.',
+      description: 'Engaged in self-directed learning to master network engineering concepts, focusing on practical skills in network design, security, and automation.',
       achievements: [
-        'Learning containerization concepts with Docker',
-        'Gaining knowledge of cloud infrastructure through AWS',
-        'Understanding system administration basics in Linux',
-        'Exploring version control practices with Git',
-        'Studying automation techniques for efficient deployments'
+        'Exploring network configuration with Cisco Packet Tracer and GNS3',
+        'Gaining expertise in IP addressing and subnetting using IPcalc and VLSM tools',
+        'Learning network security practices with pfSense and Cisco ACLs',
+        'Developing network automation scripts using Python and Netmiko',
+        'Studying network monitoring with Wireshark and SolarWinds'
       ],
     },
     {
       role: 'Computer Science Graduate',
       company: 'MEA Engineering College',
       period: '2021 - 2025',
-      description: 'Persued a B.Tech in Computer Science at KTU, building a solid foundation in computing principles through rigorous academic training and practical exposure.',
+      description: 'Pursued a B.Tech in Computer Science at KTU, building a strong foundation in networking, system administration, and programming through academic training and practical projects.',
       achievements: [
-        'Gained a strong grasp of system design and optimization',
-        'Developed an understanding of hardware-software interactions',
-        'Learned fundamentals of data management and processing',
-        'Acquired knowledge of software development lifecycle'
+        'Developed skills in network design and optimization',
+        'Gained knowledge of network protocols and TCP/IP stack',
+        'Learned fundamentals of system administration in Linux',
+        'Acquired experience in scripting for network automation'
       ],
     },
     {
       role: 'Higher Secondary Education',
       company: 'NHSS Kolathur',
       period: '2019 - 2021',
-      description: 'Dedicated period of systematic learning, building foundational knowledge in computer science, programming, and  technologies.',
+      description: 'Focused period of foundational learning in computer science, with an introduction to networking concepts and programming principles.',
       achievements: [
-        'Learned programming fundamentals in C++ and JavaScript',
-        'Started exploring various frameworks',
-        'Completed online courses in computer science fundamentals',
-        'Built initial understanding of software development principles',
+        'Learned programming fundamentals in Python and JavaScript',
+        'Explored basic networking concepts like IP addressing',
+        'Completed online courses in computer networks and protocols',
+        'Built foundational understanding of software and network principles'
       ],
     },
   ];
@@ -49,7 +48,7 @@ const ExperienceSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold">Learning Journey</h2>
           <p className="mt-4 text-foreground/70 max-w-2xl mx-auto">
-            My progression towards becoming a Cloud Engineer, highlighting continuous learning and skill development.
+            Advancing as a Network Engineer through relentless learning and hands-on skill mastery
           </p>
         </div>
         

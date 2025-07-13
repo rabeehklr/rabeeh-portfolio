@@ -12,7 +12,7 @@ const HeroSection = () => {
           </h1>
           
           <p className="mt-6 text-xl md:text-2xl text-foreground/80 max-w-2xl mx-auto md:mx-0">
-          An active learner diving into cloud and DevOps practices
+          Crafting robust networks through dedicated learning and hands-on expertise
           </p>
         </div>
       </div>

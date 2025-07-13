@@ -28,9 +28,9 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 // EmailJS credentials
-const EMAILJS_SERVICE_ID = "*********";
-const EMAILJS_TEMPLATE_ID = "********";
-const EMAILJS_PUBLIC_KEY = "*********";
+const EMAILJS_SERVICE_ID = "service_tvoyjbs";
+const EMAILJS_TEMPLATE_ID = "template_b20ifsq";
+const EMAILJS_PUBLIC_KEY = "EsHnio-V9r9PwdqMc";
 
 const ContactSection = () => {
   const { toast } = useToast();

@@ -33,7 +33,7 @@ const ProjectsSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold">Project Highlights</h2>
           <p className="mt-4 text-foreground/70 max-w-2xl mx-auto">
-            Hands-on projects demonstrating my growing skills in cloud technologies and DevOps practices.
+            Hands-on projects showcasing my expertise in network design and optimization
           </p>
         </div>
         
